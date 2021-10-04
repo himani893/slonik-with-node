@@ -1,0 +1,14 @@
+-- users
+CREATE SEQUENCE users_seq;
+CREATE TABLE users (
+  "id" INT NOT NULL DEFAULT NEXTVAL ('users_seq'),
+  "name" VARCHAR(255) NOT NULL,
+  "email" VARCHAR(254) NOT NULL,
+  "password" VARCHAR(255) NOT NULL,
+  "phoneNumber" VARCHAR(20) NOT NULL,
+  "isDeleted" BOOLEAN NOT NULL DEFAULT false,
+  "isActive" BOOLEAN NOT NULL DEFAULT true,
+  "createdAt" TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "updatedAt" TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id));
+CREATE INDEX "users_email" ON users ("email" ASC);  

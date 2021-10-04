@@ -1,0 +1,47 @@
+{
+  "name": "slonik-with-node",
+  "version": "1.0.0",
+  "description": "Slonic small prototype with Node",
+  "main": "index.js",
+  "author": "Simform",
+  "type": "module",
+  "license": "ISC",
+  "scripts": {
+    "lint": "eslint --ext .js --rulesdir=./lint/eslint-rules index.js application.js ./lib",
+    "lint-local": "eslint --ext .js --rulesdir=./lint/eslint-rules index.js application.js ./lib; exit 0",
+    "mocha": "mocha",
+    "start": "node index.js --env=dev --development-mode --enable-server",
+    "test": "npm run lint && mocha"
+  },
+  "dependencies": {
+    "async": "2.6.2",
+    "bluebird": "^3.5.0",
+    "bunyan": "^1.8.10",
+    "config": "^1.26.1",
+    "dotenv": "^10.0.0",
+    "fs-extra": "^4.0.0",
+    "helmet": "^3.8.0",
+    "http-custom-errors": "^8.0.0",
+    "node-pg-migrate": "^6.0.0",
+    "pg": "^7.18.2",
+    "request": "2.85.0",
+    "request-promise": "4.2.2",
+    "restify": "^5.0.1",
+    "restify-cors-middleware": "1.1.1",
+    "restify-plugins": "^1.6.0",
+    "restify-router": "^0.4.2",
+    "slonik": "^24.1.1"
+  },
+  "devDependencies": {
+    "@slonik/migrator": "^0.8.5",
+    "@types/dotenv": "^8.2.0",
+    "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.2.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-html": "^3.1.1",
+    "http-status": "^1.0.1",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
+  }
+}
